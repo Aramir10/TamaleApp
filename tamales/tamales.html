@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>TAMALES</title>
+
+		<script type="text/javascript" src="tamales.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <link href="tamales.css" rel="stylesheet"/>
+
+
+	</head>
+
+		<body  background ="tamales.jpg" ng-app ng-controller="OrderFormController">
+
+				<form>
+
+					<h1> Tamale Services</h1>
+
+					<ul>
+
+						<li ng-repeat="service in services" ng-click="toggleActive(service)" ng-class="{active:service.active}">
+
+							{{service.name}} <span>{{service.price | currency}}</span>
+						</li>
+					</ul>
+
+					<div class="total">
+
+						Total: <span>{{total() | currency}}</span>
+					</div>
+
+				</form>
+
+
+				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+				<script src="script.js"></script>
+			</body>
+		</html>
