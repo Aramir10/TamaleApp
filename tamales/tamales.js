@@ -1,5 +1,19 @@
-// alert("No le aflojes wey")
+console.log("Hi get your tamales rught here");
+var MongoClient = require('mongodb').MongoClient;
 
+var URL = 'mongodb://localhost:27017/tamales';
+
+MongoClient.connect(URL, function(err, db) {
+  if (err) return;
+
+  var collection = db.collection('foods');
+  collection.insert({name: 'taco', tasty: true}, function(err, result) {
+    collection.find({name: 'taco'}).toArray(function(err, docs) {
+      console.log(docs[0]);
+      db.close();
+    })
+  })
+});
 
 function OrderFormController($scope){
 
