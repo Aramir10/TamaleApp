@@ -1,4 +1,4 @@
-console.log("Hi get your tamales rught heregti");
+console.log("Hi get your tamales here");
 var MongoClient = require('mongodb').MongoClient;
 
 var URL = 'mongodb://localhost:27017/tamales';

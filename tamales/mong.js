@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost:27017/tamales');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
@@ -31,6 +31,10 @@ var bean = new Tamale({ name: 'bean tamale' });
 pork.save(function (err, pork) {
   if (err) return console.error(err);
   pork.speak();
+});
+bean.save(function (err, pork) {
+  if (err) return console.error(err);
+  bean.speak();
 });
 
 Tamale.find(function (err, tamales) {
